@@ -8,13 +8,19 @@ public class TestModel {
 		
 		Model model = new Model();
 		List<Square> solutions = model.findMagicSquares(3);
-		if(solutions != null) {
+		
+		if(solutions != null && solutions.size() > 0) {
+			
 			System.out.println("Trovata almeno una soluzione");
+			
 			for (Square s: solutions){
 				System.out.println(s.toString());
 			}
+		
 		} else {
 			System.out.println("Nessuna soluzione trovata");
 		}
+	
 	}
+
 }

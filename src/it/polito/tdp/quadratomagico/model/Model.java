@@ -14,6 +14,8 @@ public class Model {
 		// Creo un oggetto Square
 		Square square = new Square(dim);
 		
+		System.out.println("Square id:" + square.getId());
+		
 		// Chiamo la funzione ricorsiva
 		int step = 0;
 		recursive(square, step);
@@ -26,8 +28,7 @@ public class Model {
 
 		if(step >= square.getN2()){
 			if (square.checkMagicConstant()){
-				System.out.println(square.toString());
-				solutions.add(square);
+				solutions.add(new Square(square));
 			}
 			return;
 		}
@@ -36,8 +37,10 @@ public class Model {
 			if(!square.contains(i)) {
 				square.add(i);
 				recursive(square, step+1);
-				square.remove(step);
+				square.remove(i);
 			}
 		}
+		return;
 	}
+	
 }
