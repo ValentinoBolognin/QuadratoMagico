@@ -136,6 +136,9 @@ public class Square {
 			tmp += griglia.get((N-1-i)*N + i);
 		}
 		
+		if (tmp != magicConst)
+			return false;
+		
 		return true;
 	}
 
